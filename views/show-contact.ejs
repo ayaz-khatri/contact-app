@@ -12,35 +12,32 @@
                                 <h3 class="fw-bold">Contact Details</h3>
                             </div>
                             <div class="col-md-6 text-end">
-                                <a href="update-contact" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
-                                <form action="delete-contact" method="POST" class="d-inline-block">
-                                    <input type="hidden" name="id">
-                                    <button type="submit" name="delete" class="btn btn-trash btn-sm" title="Delete" onclick="return confirm('Are you sure you want to remove this record?');"><i class="fa fa-trash"></i></button>
-                                </form>
-                                <a href="/" class="btn btn-secondary btn-sm" title="Cancel"><i class="fa fa-multiply"></i></a>
+                                <a href="/" class="btn btn-primary btn-sm" title="Back"><i class="fa fa-arrow-left"></i></a>
+                                <a href="/update-contact/<%= contact._id  %>" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
+                                <a href="/delete-contact/<%= contact._id %>" class="btn btn-trash btn-sm" title="Delete" onclick="return confirm('Are you sure you want to remove this record?');"><i class="fa fa-trash"></i></a>
                             </div>
                         </div>
                         <hr>
                          <table class="table">
                             <tr>
                                 <td class="fw-bold text-secondary">First Name</td>
-                                <td>Ayaz</td>
+                                <td><%= contact.first_name %></td>
                             </tr>
                             <tr>
                                 <td class="fw-bold text-secondary">Last Name</td>
-                                <td>Khatri</td>
+                                <td><%= contact.last_name %></td>
                             </tr>
                             <tr>
                                 <td class="fw-bold text-secondary">Email</td>
-                                <td>ayaz@gamil.com</td>
+                                <td><%= contact.email %></td>
                             </tr>
                             <tr>
                                 <td class="fw-bold text-secondary">Phone</td>
-                                <td>03123456789</td>
+                                <td><%= contact.phone %></td>
                             </tr>
                             <tr>
                                 <td class="fw-bold text-secondary">Address</td>
-                                <td>123 ABC Street</td>
+                                <td><%= contact.address %></td>
                             </tr>
                         </table>
                     </form>
