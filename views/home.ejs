@@ -24,9 +24,10 @@
                             <th>Phone</th>
                             <th>Action</th> 
                         </tr>
+                        <% var i = 1; %>
                         <% contacts.forEach(contact => { %>
                         <tr>
-                            <td>1</td>
+                            <td><%= i++ %></td>
                             <td><%= contact.first_name %></td>
                             <td><%= contact.last_name %></td>
                             <td><%= contact.email %></td>
