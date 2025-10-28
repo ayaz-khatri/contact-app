@@ -15,6 +15,7 @@
                 </div>
                 <hr>
                 <div class="table-responsive crud-table">
+                    <% if(!message) { %>
                     <table class="table table-striped">
                         <tr class="sticky-header">
                             <th>#</th>
@@ -40,6 +41,9 @@
                         </tr>
                         <% }); %>
                     </table>
+                    <% } else { %>
+                    <%= message  %>
+                    <% }  %>
                 </div>
             </div>
         </div>
