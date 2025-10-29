@@ -25,7 +25,7 @@
                             <th>Phone</th>
                             <th>Action</th> 
                         </tr>
-                        <% var i = 1; %>
+                        <% var i = pagingCounter; %>
                         <% contacts.forEach(contact => { %>
                         <tr>
                             <td><%= i++ %></td>
@@ -41,6 +41,24 @@
                         </tr>
                         <% }); %>
                     </table>
+                    <nav>
+                        <ul class="pagination justify-content-end">
+                            <% let disablePreviousPage = hasPrevPage ? '' : 'disabled'; %>
+                            <li class="page-item <%= disablePreviousPage  %>">
+                                <a class="page-link" href="/?page=<%= prevPage  %>" tabindex="-1">Previous</a>
+                            </li>
+
+                            <% for (let i = 1; i <= totalPages; i++) { 
+                                let activeClass = (page == i) ? 'active' : ''; %>
+                                <li class="page-item <%= activeClass %>"><a class="page-link" href="/?page=<%= i %>"><%= i %></a></li>
+                            <% } %>
+
+                            <% let disableNextPage = hasNextPage ? '' : 'disabled'; %>
+                            <li class="page-item <%= disableNextPage  %>">
+                                <a class="page-link" href="/?page=<%= nextPage  %>">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                     <% } else { %>
                     <%= message  %>
                     <% }  %>
